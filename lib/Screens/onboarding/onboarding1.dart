@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_network_appn/Screens/onboarding/onboarding2.dart';
+import 'package:my_network_appn/Shared/Methods/Navifation.dart';
 import 'package:my_network_appn/Shared/themes/colors.dart';
 import 'package:my_network_appn/Shared/themes/text_styles.dart';
+import 'package:my_network_appn/Shared/widgets/action_button.dart';
 
 class OnBoardingOneScreen extends StatelessWidget {
   const OnBoardingOneScreen({super.key});
@@ -23,7 +26,7 @@ class OnBoardingOneScreen extends StatelessWidget {
                 height: 47,
               ),
               Text(
-                "My network app is the\n best app for\n connecting people",
+                "My network app is the\n best app for\n connecting people 1",
                 style: h5,
                 textAlign: TextAlign.center,
               )
@@ -32,19 +35,12 @@ class OnBoardingOneScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 16.0, bottom: 16.0),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(orange),
-              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)))),
-          child: Text(
-            "Next",
-            style: TextStyle(color: white),
-          ),
-        ),
-      ),
+          padding: const EdgeInsets.only(right: 16.0, bottom: 16.0),
+          child: ActionButton(
+              textButton: "next",
+              onClicked: () {
+                goTo(context: context, screen: OnBoardingTwoScreen());
+              })),
     );
   }
 }

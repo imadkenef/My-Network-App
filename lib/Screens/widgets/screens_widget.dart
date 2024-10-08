@@ -1,0 +1,1 @@
+export 'sicial_media_icon.dart';
