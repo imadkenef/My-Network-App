@@ -1,8 +1,12 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:my_network_appn/Shared/themes/colors.dart';
+import 'package:my_network_appn/Shared/themes/text_styles.dart';
 import 'package:my_network_appn/Shared/widgets/action_button.dart';
-import 'package:my_network_appn/Shared/widgets/sicial_media_icon.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../Shared/widgets/bottom_nav_bar.dart';
+import 'widgets/screens_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
@@ -31,6 +35,8 @@ class ProfileScreen extends StatelessWidget {
           color: orange,
         ),
       ),
+      bottomNavigationBar: BottonNavBar(),
+      extendBody: true,
       backgroundColor: const Color.fromARGB(255, 3, 7, 30),
       body: SizedBox(
         width: double.infinity,
@@ -57,16 +63,37 @@ class ProfileScreen extends StatelessWidget {
                 height: 5,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ActionButtonIcpn(
+                  ActionButton(
+                    color: black,
                     onClicked: () {},
-                    icon: Icons.add,
-                    textButton: "Add to my network",
+                    textButton: "Edit profile",
                   ),
-                  ActionButtonIcpn(
-                    onClicked: () {},
-                    icon: Icons.add,
-                    textButton: "Add to my network",
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ActionButton(
+                    color: lightRed,
+                    onClicked: () {
+                      AwesomeDialog(
+                        customHeader: Icon(
+                          Icons.warning,
+                          color: lightRed,
+                          size: 60,
+                        ),
+                        titleTextStyle: h4Bold.merge(TextStyle(color: black)),
+                        context: context,
+                        dialogType: DialogType.info,
+                        animType: AnimType.rightSlide,
+                        title: 'Delete Profile',
+                        desc:
+                            'Are you sure that you want to delete your profie ?',
+                        btnCancelOnPress: () {},
+                        btnOkOnPress: () {},
+                      ).show();
+                    },
+                    textButton: "Delete profile",
                   ),
                 ],
               ),

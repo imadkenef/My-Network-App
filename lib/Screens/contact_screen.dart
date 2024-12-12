@@ -3,6 +3,7 @@ import 'package:my_network_appn/Shared/themes/colors.dart';
 import 'package:my_network_appn/Shared/widgets/action_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Screens/widgets/screens_widget.dart';
+import '../Shared/widgets/back_botton.dart';
 
 class ContactScreen extends StatelessWidget {
   ContactScreen({super.key});
@@ -23,13 +24,11 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back,
-            size: 40,
-            color: orange,
-          ),
+        title:Text('Contact'),
+          leading:BackBotton()
         ),
       backgroundColor: const Color.fromARGB(255, 3, 7, 30),
+      extendBody: true,
       body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(

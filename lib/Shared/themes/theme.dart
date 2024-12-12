@@ -4,7 +4,7 @@ import 'colors.dart';
 import 'text_styles.dart';
 
 var appTheme = ThemeData(
-  appBarTheme: AppBarTheme(color: transparent),
+  appBarTheme: AppBarTheme(backgroundColor: transparent,titleTextStyle: h5Bold ),
   floatingActionButtonTheme:
       FloatingActionButtonThemeData(backgroundColor: orange),
   scaffoldBackgroundColor: navy,
